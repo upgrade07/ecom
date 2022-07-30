@@ -2,12 +2,12 @@ import Container from "react-bootstrap/Container";
 import '../App.css'
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
+import {NavLink} from 'react-router-dom'
 function Navbarcomp() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <h1>Deluxe.</h1>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -17,7 +17,7 @@ function Navbarcomp() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/products">Products</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
