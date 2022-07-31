@@ -2,10 +2,9 @@ import Container from "react-bootstrap/Container";
 import '../App.css'
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import {NavLink} from 'react-router-dom'
 function Navbarcomp() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className="navbar sticky-top" bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/">
           <h1>Deluxe.</h1>
