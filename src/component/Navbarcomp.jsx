@@ -1,8 +1,11 @@
 import Container from "react-bootstrap/Container";
 import '../App.css'
+import { NavLink } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import { useSelector } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 function Navbarcomp() {
+  const state = useSelector((state)=>state.handleCart)
   return (
     <Navbar className="navbar sticky-top" bg="light" expand="lg">
       <Container>
@@ -22,14 +25,14 @@ function Navbarcomp() {
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
           <div className="buttons">
-            <a href="" className="btn btn-outline-dark">
+            <a href="/login" className="btn btn-outline-dark">
               <i className="fa fa-sign-in me-1"> Login</i>
             </a>
-            <a href="" className="btn btn-outline-dark ms-2">
+            <a href="/register" className="btn btn-outline-dark ms-2">
               <i className="fa fa-user-plus me-1"> Register</i>
             </a>
-            <a href="" className="btn btn-outline-dark ms-2">
-              <i className="fa fa-shopping-cart me-1"> Cart (0)</i>
+            <a href="/cart" className="btn btn-outline-dark ms-2">
+              <i className="fa fa-shopping-cart me-1"> Cart ({state.length})</i>
             </a>
           </div>
         </Navbar.Collapse>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Skeleton from "react-loading-skeleton";
+import { NavLink } from "react-router-dom";
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -26,7 +27,7 @@ const Products = () => {
     getProducts();
   }, []);
 
-  const Loading = () => {
+const Loading = () => {
     return (
         <>
             <div className="col-md-3">
@@ -71,7 +72,10 @@ const Products = () => {
                     <Card.Text className="lead fw-bold">
                       {product.price} $
                     </Card.Text>
-                    <Button className=" btn-light btn-outline-dark">Buy now</Button>
+                    <NavLink to={`/product/${product.id}`}>
+                    <Button  className="btn-light btn-outline-dark">Buy now</Button>
+                    </NavLink>
+                    
                   </Card.Body>
                 </Card>
               </div>
@@ -99,4 +103,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Products
