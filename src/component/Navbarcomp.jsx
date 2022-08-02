@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import '../App.css'
 import { NavLink } from "react-router-dom";
+import { Link } from 'react-router-dom'
 import Nav from "react-bootstrap/Nav";
 import { useSelector } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
@@ -19,12 +20,14 @@ function Navbarcomp() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse><Nav.Link href="/">Home</Nav.Link></Navbar.Collapse>
             <Nav.Link href="/products">Products</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
           <div className="buttons">
+          
             <a href="/login" className="btn btn-outline-dark">
               <i className="fa fa-sign-in me-1"> Login</i>
             </a>
